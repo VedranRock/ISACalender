@@ -87,4 +87,45 @@ header {
     mask-size: 100% 100%;
     float: right;
     padding: 20px;
-  }
+}
+
+.month-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.month-label {
+    font-size: 1.5em;
+    color: #002D72;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    color: #002D72;
+}
+
+.close-button {
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+}

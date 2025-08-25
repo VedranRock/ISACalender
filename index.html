@@ -11,9 +11,11 @@
 <body>
     <header>ISA School Calendar</header>
 
-    <span class="mingcute--left-fill"></span>
-    <div><b>August</b></div>
-    <span class="mingcute--right-fill"></span>
+    <div class="month-toggle">
+        <span class="mingcute--left-fill"></span>
+        <div class="month-label"><b>August</b></div>
+        <span class="mingcute--right-fill"></span>
+    </div>
 
 
     <div class="calendar">
@@ -61,6 +63,16 @@
         <div class="day">29</div>
         <div class="day weekend">30</div>
         <div class="day weekend">31</div>
+    </div>
+
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Events for <span id="modal-date"></span></h2>
+            <ul id="event-list">
+                <!-- Events will be injected here -->
+            </ul>
+        </div>
     </div>
 </body>
 
