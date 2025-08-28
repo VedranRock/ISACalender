@@ -1,78 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>ISA Calendar</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>ISA Calendar</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <header>ISA School Calendar</header>
+  <header>ISA School Calendar</header>
 
-    <div class="month-toggle">
-        <span class="mingcute--left-fill"></span>
-        <div class="month-label"><b>August</b></div>
-        <span class="mingcute--right-fill"></span>
+  <div class="month-toggle">
+    <span class="mingcute--left-fill"></span>
+    <div class="month-label"><b>August</b></div>
+    <span class="mingcute--right-fill"></span>
+  </div>
+
+  <div class="calendar">
+    <div class="dayLables">Mon</div>
+    <div class="dayLables">Tue</div>
+    <div class="dayLables">Wed</div>
+    <div class="dayLables">Thu</div>
+    <div class="dayLables">Fri</div>
+    <div class="dayLables">Sat</div>
+    <div class="dayLables">Sun</div>
+    <!-- Days will be dynamically inserted here -->
+  </div>
+
+  <div id="eventModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Events for <span id="modal-date"></span></h2>
+      <div id="event-list"></div>
     </div>
+  </div>
 
-
-    <div class="calendar">
-        <div class="dayLables">Mon</div>
-        <div class="dayLables">Tue</div>
-        <div class="dayLables">Wed</div>
-        <div class="dayLables">Thu</div>
-        <div class="dayLables">Fri</div>
-        <div class="dayLables">Sat</div>
-        <div class="dayLables">Sun</div>
-
-        <!-- Sample week -->
-        <div class="dayPrevious">28</div>
-        <div class="dayPrevious">29</div>
-        <div class="dayPrevious">30</div>
-        <div class="dayPrevious">31</div>
-        <div class="day">1</div>
-        <div class="day weekend">2</div>
-        <div class="day weekend">3</div>
-        <div class="day">4</div>
-        <div class="day">5</div>
-        <div class="day">6</div>
-        <div class="day">7</div>
-        <div class="day">8</div>
-        <div class="day weekend">9</div>
-        <div class="day weekend">10</div>
-        <div class="day">11</div>
-        <div class="day">12</div>
-        <div class="day">13</div>
-        <div class="day">14</div>
-        <div class="day">15</div>
-        <div class="day weekend">16</div>
-        <div class="day weekend">17</div>
-        <div class="day">18</div>
-        <div class="day">19</div>
-        <div class="day">20</div>
-        <div class="day">21</div>
-        <div class="day">22</div>
-        <div class="day weekend">23</div>
-        <div class="day weekend">24</div>
-        <div class="day">25</div>
-        <div class="day">26</div>
-        <div class="day">27</div>
-        <div class="day">28</div>
-        <div class="day">29</div>
-        <div class="day weekend">30</div>
-        <div class="day weekend">31</div>
-    </div>
-
-    <div id="eventModal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Events for <span id="modal-date"></span></h2>
-            <ul id="event-list"></ul>
-        </div>
-    </div>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-</body>
-
 </html>
