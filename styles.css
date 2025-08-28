@@ -129,3 +129,12 @@ header {
     font-size: 1.5em;
     cursor: pointer;
 }
+
+.day.empty {
+    visibility: hidden;
+}
+
+.day.weekend {
+    background-color: #f0f0f0;
+    /* Light gray or your preferred weekend color */
+}

@@ -25,12 +25,31 @@ const months = [
     calendar.innerHTML = '';
     labels.forEach(label => calendar.appendChild(label));
   
-    const daysInMonth = new Date(new Date().getFullYear(), currentMonthIndex + 1, 0).getDate();
+    const year = new Date().getFullYear();
+    const daysInMonth = new Date(year, currentMonthIndex + 1, 0).getDate;
+    const firstDayOfWeek = new Date(year, currentMonthIndex, 1).getDay(); // 0 = Sunday
   
+    // Adjust so Monday = 0, Sunday = 6
+    const adjustedStart = (firstDayOfWeek + 6) % 7;
+  
+    // Add empty padding days
+    for (let i = 0; i < adjustedStart; i++) {
+      const emptyDiv = document.createElement('div');
+      emptyDiv.className = 'day empty';
+      calendar.appendChild(emptyDiv);
+    }
+  
+    // Add actual days
     for (let day = 1; day <= daysInMonth; day++) {
       const dayDiv = document.createElement('div');
       dayDiv.className = 'day';
-      if (isWeekend(day, currentMonthIndex)) dayDiv.classList.add('weekend');
+      const date = new Date(year, currentMonthIndex, day);
+      const dayOfWeek = date.getDay(); // 0 = Sunday, 6 = Saturday
+  
+      if (dayOfWeek === 0 || dayOfWeek === 6) {
+        dayDiv.classList.add('weekend');
+      }
+  
       dayDiv.textContent = day;
       dayDiv.addEventListener('click', () => showEvents(day));
       calendar.appendChild(dayDiv);
